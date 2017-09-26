@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>//*||*\\  TRAIN SCHEDULER  //*||*\\</title>
+  <!-- CSS reset sheet --> 
+  <link rel="stylesheet" type="text/css" href="Assets/CSS/reset.css">
+  <!-- current version of bootstrap --> 
+  <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css” integrity=“sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ” crossorigin=“anonymous”>
+  <!-- themed bootstrap sheet --> 
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/spacelab/bootstrap.min.css">
+  <!-- my stylesheet -->
+  <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+  <!-- adding in jquery --> 
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <!-- adding in bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- my js game file -->
+  <script src="Assets/javascript/app.js"></script>
+  <!-- Icons file -->
+  <script src="https://use.fontawesome.com/c8b6d2fc87.js"></script>
+
+  <!-- Run Firebase Hosting --> 
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+	<script>
+  	// Initialize Firebase
+  	var config = {
+	    apiKey: "AIzaSyAXhY_oYYf3lbxdINip3rZQA_5FTC0cNYs",
+	    authDomain: "trainscheduler-a018d.firebaseapp.com",
+	    databaseURL: "https://trainscheduler-a018d.firebaseio.com",
+	    projectId: "trainscheduler-a018d",
+	    storageBucket: "trainscheduler-a018d.appspot.com",
+	    messagingSenderId: "248552848952"
+  	};
+  	firebase.initializeApp(config);
+</script>
+
+
+</head>
+
+
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><strong>TrainSCHEDULER //*\\</strong></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" data-toggle="modal" data-target="#myModal">Random Quote <span class="sr-only">(current)</span></a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Car Models <span class="caret"></span></a>
+          <ul class="dropdown-menu topicitems" role="menu" id="topicitems">
+            <div id="topicitems"></div>
+          </ul> -->
+        </li> 
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+              <!-- How it works Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Random Quote</h4>
+                    </div>
+                      <div class="modal-body">
+                        <p>The random quote below is pulled from quotes.rest:
+                        <br/><br/></p>
+                        <center><h3 id="quote">Big quote here that has many long words liek something really special.</h3></center>
+                      </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+<!-- main div containing the game page elements --> 
+<div id="game-section">
+
+<!-- first row full width showing the guesses you have made --> 
+<div class="container">
+  <div class="row">
+      <div class="col-sm-9">
+        <div class="panel panel-default">
+              <div class="panel-heading">
+              <h3 class="panel-title"><strong>Train Schedule</strong></h3>
+              </div>
+              <div class="panel-body" id="imagespanel">
+              		<table class="table table-striped table-hover ">
+					  <thead>
+					    <tr>
+					      <th>#</th>
+					      <th>Column heading</th>
+					      <th>Column heading</th>
+					      <th>Column heading</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>1</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					    <tr>
+					      <td>2</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					    <tr class="info">
+					      <td>3</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					    <tr class="success">
+					      <td>4</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					    <tr class="danger">
+					      <td>5</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					    <tr class="warning">
+					      <td>6</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					    <tr class="active">
+					      <td>7</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					      <td>Column content</td>
+					    </tr>
+					  </tbody>
+					</table>  
+              </div>
+            </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="panel panel-default">
+              <div class="panel-heading">
+              <h3 class="panel-title"><strong>Add a Train</strong></h3>
+              </div>
+              <div class="panel-body">
+              		<form class="form-horizontal">
+					  <fieldset>
+					    
+					    <div class="form-group col-lg-12">
+  							<label class="control-label" for="focusedInput">Train </label>
+  							<input class="form-control" id="focusedInput" type="text" value="This is focused...">
+						</div>
+
+						<div class="form-group col-lg-12">
+  							<label class="control-label" for="focusedInput">Focused input</label>
+  							<input class="form-control" id="focusedInput" type="text" value="This is focused...">
+						</div>
+
+						<div class="form-group col-lg-12">
+  							<label class="control-label" for="focusedInput">Focused input</label>
+  							<input class="form-control" id="focusedInput" type="text" value="This is focused...">
+						</div>
+
+						<div class="form-group col-lg-12">
+  							<label class="control-label" for="focusedInput">Focused input</label>
+  							<input class="form-control" id="focusedInput" type="text" value="This is focused...">
+						</div>
+
+					    <div class="form-group">
+					      <div class="col-lg-12">
+					        <button type="submit" class="btn btn-primary">Submit</button>
+					      </div>
+					    </div>
+
+
+
+
+					  </fieldset>
+					</form>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+
+</div>
