@@ -8,6 +8,19 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
-  }
+    ],
+    "redirects": [{
+      "source": "/Assets/CSS/style.css",
+      "destination": "/assets/css/style.css",
+      "type": 301
+    },{
+      "source": "/Assets/CSS/reset.css",
+      "destination": "/assets/css/reset.css",
+      "type": 301
+    },{
+      "source": "/Assets/javascript/app.js",
+      "destination": "/assets/javascript/app.js",
+      "type": 301
+    }
+  ]}
 }
