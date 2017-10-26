@@ -136,7 +136,8 @@ function arrivaltime() {
 	var htmltime = '<li id="el-time">' + time + '</li>';
 	$('#el-time').append(htmltime);
 
-	arrival = time + 
+	var arrival = '';
+
 }
 
 
